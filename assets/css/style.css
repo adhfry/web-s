@@ -1,0 +1,706 @@
+/* Import font dari google font */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* Style umum */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #fff;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+a {
+  font-weight: 550;
+}
+
+a:hover {
+  color: #007bff !important;
+}
+
+.bear {
+  display: none;
+  margin-top: 2rem;
+  animation: sway 8s ease-in-out infinite; /* Durasi, timing function, dan pengulangan */
+  transform-origin: bottom center; /* Titik rotasi di bagian bawah untuk efek bergoyang */
+}
+
+@keyframes sway {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-25deg); /* Putar sedikit ke kiri */
+  }
+  50% {
+    transform: rotate(5deg); /* Putar sedikit ke kanan */
+  }
+  75% {
+    transform: rotate(-5deg); /* Kembali ke kiri */
+  }
+  100% {
+    transform: rotate(0deg); /* Kembali ke posisi awal */
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Gaya Main Content */
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr); /* Tiga kolom pada layar besar */
+}
+
+/* Gaya untuk setiap section dalam main content */
+.content-section {
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.content-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsivitas */
+@media (max-width: 992px) {
+  .main-content {
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom pada layar sedang */
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+p {
+  font-size: 1.4rem;
+  font-weight: 650;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Style untuk konten utama */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 20px;
+}
+
+.hero-text {
+  max-width: 900px;
+  margin-right: 10rem;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  font-weight: 725;
+  color: #333;
+}
+
+.highlight {
+  color: #007bff;
+}
+
+.buttons .hire-btn,
+.buttons .cv-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.hire-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.cv-btn {
+  background-color: #fff;
+  color: #007bff;
+}
+
+.hero-image img {
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Sidebar tersembunyi di luar layar */
+  width: 250px;
+  height: 100%;
+  background-color: pink;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.chat-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: auto; /* Memposisikan button di bawah */
+}
+
+/* Tampilkan sidebar ketika class 'open' ditambahkan */
+.sidebar.open {
+  right: 0; /* Sidebar bergeser masuk ke layar */
+}
+
+@media (max-width: 1105px) {
+  .w-130 {
+    width: 120% !important;
+  }
+  .about-image img {
+    margin-right: 7rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .w-130 {
+    width: 110% !important;
+  }
+  .about-image img {
+    margin-right: 5rem !important;
+  }
+}
+@media (max-width: 835px) {
+  .w-130 {
+    width: 90% !important;
+  }
+  .about-image img {
+    margin-right: 4rem !important;
+  }
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 1150px) {
+  .hero-text {
+    margin-right: 7rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .hero-image img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.w-130 {
+  width: 130%;
+}
+
+.about-section {
+  padding: 50px 20px;
+}
+
+.about-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10rem;
+}
+
+.about-content h3 {
+  font-size: 1rem;
+  color: #007bff;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: 1px solid #007bff;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.tab:not(.active) {
+  background-color: #fff;
+  color: #007bff;
+}
+
+.skills .skill {
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.skill span {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #007bff;
+  border-radius: 4px;
+}
+
+.about-me {
+  max-width: 600px;
+  margin: auto;
+}
+
+.personal-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.info {
+  font-size: 16px;
+}
+
+.info > a {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.info > a:hover {
+  color: #007bff !important;
+}
+
+.info span {
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Styling untuk elemen dalam main */
+#consultancy-form {
+  background-color: #0073e6;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+#consultancy-form h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#consultancy-form p {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #b3d4fc;
+}
+
+.form-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-info,
+.contact-form {
+  background-color: #ffffff;
+  color: #333;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 0.5rem);
+}
+
+.contact-info p,
+.contact-info b {
+  margin: 0.5rem 0;
+}
+
+.contact-info p b {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.contact-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.submit-btn {
+  background-color: #0073e6;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #005bb5;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.terms a {
+  color: #0073e6;
+  text-decoration: none;
+  margin-left: 0.25rem;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* Alert */
+.alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.alert-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease;
+}
+
+.alert-content p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.alert-content button {
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.alert-content button:hover {
+  background-color: #005bb5;
+}
+/* End Alert */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.alert.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 600px) {
+  .personal-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    justify-content: center !important;
+  }
+  .about-image img {
+    margin-right: 0 !important;
+  }
+  .w-130 {
+    width: 100% !important;
+  }
+  a:hover {
+    color: #fff !important;
+  }
+  .about-image img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .about-content h1 {
+    font-size: 2rem;
+  }
+  .main-content {
+    grid-template-columns: 1fr; /* Satu kolom pada layar kecil */
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .content-section {
+    padding: 1.2rem;
+  }
+  nav ul {
+    margin-top: 3rem;
+    flex-direction: column !important;
+  }
+  #nav-lg {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .reverse {
+    flex-direction: column-reverse !important;
+  }
+
+  .row {
+    flex-direction: row !important;
+  }
+  .col {
+    flex-direction: col !important;
+  }
+
+  .hero-text {
+    margin-right: 0;
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-image img {
+    margin-bottom: 2rem;
+    width: 350px;
+    height: 350px;
+  }
+
+  .chat-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .content-section p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsif untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p,
+  .buttons .hire-btn,
+  .buttons .cv-btn {
+    font-size: 0.9rem;
+  }
+
+  .hero-image img {
+    width: 120px;
+    height: 120px;
+  }
+}
